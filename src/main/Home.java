@@ -4,11 +4,12 @@ public class Home {
 
 	public static void main(String[] args) {
 		
-		Conta conta1 = new Conta();
-		
-		conta1.setnome("gustavo");
-		
-		System.out.println(conta1.getnome());
+		Cliente cliente1 = new Cliente("Gustavo");
+		Cliente cliente2 = new Cliente("Pedro");
+		Cliente cliente3 = new Cliente("Davi");
+		Cliente cliente4 = new Cliente("Julia");
+		Cliente cliente5 = new Cliente("Carlos");
+
 		
 		System.out.println("Terminei execucao");
 	}
