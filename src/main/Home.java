@@ -10,6 +10,8 @@ public class Home {
 		Cliente cliente4 = new Cliente("Julia");
 		Cliente cliente5 = new Cliente("Carlos");
 
+		Loja amazon = new Loja("Amazon");
+		Loja apple = new Loja("Apple");
 		
 		System.out.println("Terminei execucao");
 	}

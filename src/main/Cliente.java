@@ -18,10 +18,10 @@ public class Cliente extends Conta implements Runnable{
 	@Override
 	public void run() {
 		System.out.println(this.getnome());
-		for(int i = 0; i<5; i++) {
-			this.setsaldo(getsaldo() - 200);
-			System.out.println(this.getsaldo());
-		}
+//		for(int i = 0; i<5; i++) {
+//			this.setsaldo(getsaldo() - 200);
+//			System.out.println(this.getsaldo());
+//		}
 	}
 	
 	//funcao que cria e star o thread
