@@ -2,13 +2,21 @@ package main;
 
 import java.lang.Thread;
 import java.lang.Runnable;
+import java.util.ArrayList;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Cliente extends Conta implements Runnable{
 	private String nome;
+	private Conta conta = new Conta();
+	private ArrayList<Loja> lojas = new ArrayList<Loja>();
 	
-	public Cliente(String nome) {
+	private final Lock lock = new ReentrantLock();
+	
+	public Cliente(String nome, ArrayList<Loja> lojas) {
 		this.nome = nome;
+		this.lojas = lojas;
 		
 		this.startConta();
 		this.starThread();
@@ -17,11 +25,17 @@ public class Cliente extends Conta implements Runnable{
 	
 	@Override
 	public void run() {
-		System.out.println(this.getnome());
-//		for(int i = 0; i<5; i++) {
-//			this.setsaldo(getsaldo() - 200);
-//			System.out.println(this.getsaldo());
-//		}
+		lock.lock();
+		try {
+			this.fazendoCompras();
+		}finally{
+			lock.unlock();
+		}
+	}
+	
+	private void fazendoCompras() {
+		this.conta.setsaldo(10000);
+//		while()
 	}
 	
 	//funcao que cria e star o thread
