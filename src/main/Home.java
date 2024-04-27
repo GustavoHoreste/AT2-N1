@@ -23,9 +23,11 @@ public class Home {
 		Cliente cliente4 = new Cliente("Julia", lojas);
 		Cliente cliente5 = new Cliente("Carlos", lojas);
 
-		Banco banco = new Banco();
-		banco.tranferencia(carlos, 1400);
-		banco.tranferencia(gustavo, 1400);
+		
+
+		System.out.println("Saldo insuficiente: ");
+		System.out.println("Saldo " + amazon.getnome() + ": " + amazon.getsaldo());
+		System.out.println("Saldo " + apple.getnome() + ": " + apple.getsaldo());
 		
 	}
 }

@@ -4,7 +4,6 @@ public class Conta {
 	private String nome;
 	private double saldo;
 
-	
 	public String getnome() {
 		return nome;
 	}

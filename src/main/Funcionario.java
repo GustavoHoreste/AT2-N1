@@ -16,9 +16,7 @@ public class Funcionario implements Runnable{
 	
 	
 	@Override
-	public void run() {
-		
-	}
+	public void run() { }
 	
 	public String getnome() {
 		return this.nome;
