@@ -17,17 +17,10 @@ public class Home {
 		lojas.add(apple);
 		lojas.add(amazon);
 		
-		Cliente cliente1 = new Cliente("Gustavo", lojas);
-		Cliente cliente2 = new Cliente("Pedro", lojas);
-		Cliente cliente3 = new Cliente("Davi", lojas);
-		Cliente cliente4 = new Cliente("Julia", lojas);
-		Cliente cliente5 = new Cliente("Carlos", lojas);
-
-		
-
-		System.out.println("Saldo insuficiente: ");
-		System.out.println("Saldo " + amazon.getnome() + ": " + amazon.getsaldo());
-		System.out.println("Saldo " + apple.getnome() + ": " + apple.getsaldo());
-		
+		Cliente cliente1 = new Cliente("cliente1", lojas);
+		Cliente cliente2 = new Cliente("cliente2", lojas);
+		Cliente cliente3 = new Cliente("cliente3", lojas);
+		Cliente cliente4 = new Cliente("cliente4", lojas);
+		Cliente cliente5 = new Cliente("cliente5", lojas);
 	}
 }

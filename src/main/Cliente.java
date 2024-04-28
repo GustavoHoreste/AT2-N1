@@ -24,7 +24,7 @@ public class Cliente extends Conta implements Runnable{
 	
 	
 	@Override
-	public  void run() {
+	public synchronized void run() {
 		lock.lock();
 		try {
 			this.fazendoCompras();
@@ -70,7 +70,6 @@ public class Cliente extends Conta implements Runnable{
 	}
 	
 	private double subtraiNovaCompra(double corrSaldo, double valorCompra) {
-//		System.out.println("corrente saldo: " + corrSaldo + " valor de COmpra: " + valorCompra);
 		this.setsaldo(corrSaldo - valorCompra);
 		return this.getsaldo();
 	}
