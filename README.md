@@ -1,5 +1,7 @@
 # AT2/N1 - Atividade prática individual - Bimestre N1
 
+![Sistema de simulação bancária e de varejo](https://github.com/GustavoHoreste/AT2-N1/assets/101297032/94f03244-6765-4a26-9f84-93bb40c6e4e2)
+
 ## Descrição
 
 Este repositório contém o código-fonte de um sistema de simulação bancária e de varejo desenvolvido como parte da atividade prática individual do bimestre N1.
