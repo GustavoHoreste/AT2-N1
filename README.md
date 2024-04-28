@@ -27,6 +27,11 @@ O projeto está estruturado da seguinte forma:
 - Java
 - IDE (Eclipse)
 
+## Saida do Sitema:
+<img width="965" alt="image" src="https://github.com/GustavoHoreste/AT2-N1/assets/101297032/c5e16791-cd2a-4812-981b-cda6db33f7e5">
+<img width="1019" alt="image" src="https://github.com/GustavoHoreste/AT2-N1/assets/101297032/48ee63eb-12b7-4c94-998d-650a6964b03a">
+
+
 ## Autor
 
 Gustavo Horeste - [GitHub](https://github.com/GustavoHoreste)
