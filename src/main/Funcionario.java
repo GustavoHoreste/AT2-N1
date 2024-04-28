@@ -34,6 +34,6 @@ public class Funcionario implements Runnable{
 	
 	private void fazerInvestimento() {
 		this.contaCorrente.setsaldo(this.contaPoupanca.getsaldo() * 0.2);
-		System.out.println("Funcionario - [" + this.nome + "] possui [" + this.contaCorrente.getsaldo() + "] investidos");
+//		System.out.println("Funcionario - [" + this.nome + "] possui [" + this.contaCorrente.getsaldo() + "] investidos");
 	}
 }

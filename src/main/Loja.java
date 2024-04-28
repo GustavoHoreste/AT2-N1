@@ -1,29 +1,40 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 public class Loja extends Conta{
 	private String nome;
-	private Banco banco = new Banco();
+	private Banco banco;
 	private Funcionario ultimoFuncionario;
 	private ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
-	public Loja(String nome, Funcionario func1, Funcionario func2) {
+	private final Lock lock = new ReentrantLock();
+	
+	public Loja(String nome, Funcionario func1, Funcionario func2, Banco banco) {
 		this.nome = nome;
+		this.banco = banco;
 		this.funcionarios.add(func1);
 		this.funcionarios.add(func2);
 	}
 	
-	public synchronized void novaCompra(double value){
-		double novoValue = this.getsaldo() + value;
-		this.setsaldo(novoValue);
-		this.verificaSaldo();
+	public void novaCompra(double value, Cliente cliente, Loja loja){
+		lock.lock();
+		try {
+			double novoValue = this.getsaldo() + value;
+			this.setsaldo(novoValue);
+			this.banco.adicionarHistoricoCompra(cliente, loja, value);
+			this.verificaSaldo();
+		} finally {
+			lock.unlock();
+		}
 	}
 	
 	public void verificaSaldo() {
 		double correnteSaldo = this.getsaldo();
 		if (correnteSaldo >= 1400 ) {
-			System.out.println("Saldo "+ this.nome + " " + this.getsaldo() + " saldo corrente " + correnteSaldo);
 			this.pagarFuncionario();
 		}
 	}
@@ -41,6 +52,7 @@ public class Loja extends Conta{
 		this.banco.tranferencia(funcionarios.get(index), 1400);
 		this.setsaldo(getsaldo() - 1400);
 		this.ultimoFuncionario = this.funcionarios.get(index);
+		this.banco.adicionarHistoricoDePagemento(ultimoFuncionario, this.getsaldo(), this);
 	}
 	
 	public String getnome() {

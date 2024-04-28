@@ -22,9 +22,8 @@ public class Cliente extends Conta implements Runnable{
 		this.starThread();
 	}
 	
-	
 	@Override
-	public synchronized void run() {
+	public  void run() {
 		lock.lock();
 		try {
 			this.fazendoCompras();
@@ -37,18 +36,21 @@ public class Cliente extends Conta implements Runnable{
 		double saldoCorrente = this.getsaldo();
 		boolean ultimaCompra = false;
 		
-		while(saldoCorrente > 0) {
+		while(saldoCorrente > 0 ) {
 			double valorCompra = valorCompraAleatorio();
-			if (ultimaCompra == true) {
-				this.compraNaLoja(lojas.get(0), valorCompra);
-				saldoCorrente = this.subtraiNovaCompra(saldoCorrente, valorCompra);
-				ultimaCompra = false;
-			}else {
-				this.compraNaLoja(lojas.get(1), valorCompra);
-				saldoCorrente = this.subtraiNovaCompra(saldoCorrente, valorCompra);
-				ultimaCompra = true;
+			if (saldoCorrente >= valorCompra) {
+				if (ultimaCompra == true) {
+					this.compraNaLoja(lojas.get(0), valorCompra);
+					saldoCorrente = this.subtraiNovaCompra(saldoCorrente, valorCompra);
+					ultimaCompra = false;
+				}else {
+					this.compraNaLoja(lojas.get(1), valorCompra);
+					saldoCorrente = this.subtraiNovaCompra(saldoCorrente, valorCompra);
+					ultimaCompra = true;
+				}
 			}
 		}
+		
 	}
 	
 	//funcao que cria e star o thread
@@ -75,11 +77,6 @@ public class Cliente extends Conta implements Runnable{
 	}
 	
 	private void compraNaLoja(Loja loja, double valor) {
-		System.out.println("Cliente: " + this.getnome() + "\n" +
-                "Valor do saldo: " + this.getsaldo() + "\n" +
-                "Comprou na loja: " + loja.getnome() + "\n" +
-                "Valor Compra: " + valor + "\n");
-
-		loja.novaCompra(valor);
+		loja.novaCompra(valor, this, loja);
 	}
 }
