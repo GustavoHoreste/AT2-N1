@@ -1,6 +1,6 @@
 # AT2/N1 - Atividade Prática Individual - Bimestre N1
 
-![Sistema de Simulação Bancária e de Varejo](https://github.com/GustavoHoreste/AT2-N1/assets/101297032/94f03244-6765-4a26-9f84-93bb40c6e4e2)
+<img src="https://github.com/GustavoHoreste/AT2-N1/assets/101297032/94f03244-6765-4a26-9f84-93bb40c6e4e2" alt="Sistema de Simulação Bancária e de Varejo" width="200" height="150">
 
 ## Descrição 📝
 
