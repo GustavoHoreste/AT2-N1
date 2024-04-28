@@ -86,7 +86,9 @@ public class Banco{
 
 	    System.out.println("Bem-vindo ao Histórico:");
 	    System.out.println(historicoComprasTabela);
+	    System.out.println("\u001B[34m---------------------------------------------\u001B[0m");
 	    System.out.println(historicoPagamentosTabela);
+	    System.out.println("\u001B[34m---------------------------------------------\u001B[0m");
 	}
 
 
