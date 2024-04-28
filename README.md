@@ -4,9 +4,10 @@
 
 ## Descrição 📝
 
-Este repositório contém o código-fonte de um sistema de simulação bancária e de varejo desenvolvido como parte da atividade prática individual do bimestre N1.
+Este repositório contém o código-fonte de um sistema de simulação bancária e de varejo desenvolvido como parte da atividade prática individual do bimestre N1, com ênfase em programação concorrente e distribuída.
 
-O sistema simula interações entre funcionários, lojas, clientes e um banco, com foco em pagamentos e transações financeiras.
+O sistema simula interações entre funcionários, lojas, clientes e um banco, com o objetivo de demonstrar conceitos e práticas relacionadas à programação concorrente e distribuída em ambientes de transações financeiras e varejo.
+
 
 ## Funcionalidades 🛠️
 
